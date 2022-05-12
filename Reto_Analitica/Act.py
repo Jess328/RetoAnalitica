@@ -22,22 +22,6 @@ df.describe()
 # ------------------- Análisis por variable ------------------- #
 
 # %%
-#customer
-print("valor mínimo: ", df['customer'].min())
-print("valor máximo: ", df['customer'].max())
-print("mean: ", df['customer'].mean())
-print("median: ", df['customer'].median())
-print("std: ", df['customer'].std())
-
-# %%
-#order
-print("valor mínimo: ", df['order'].min())
-print("valor máximo: ", df['order'].max())
-print("mean: ", df['order'].mean())
-print("median: ", df['order'].median())
-print("std: ", df['order'].std())
-
-# %%
 #total_items
 print("valor mínimo: ", df['total_items'].min())
 print("valor máximo: ", df['total_items'].max())
@@ -52,22 +36,6 @@ print("valor máximo: ", df['discount%'].max())
 print("mean: ", df['discount%'].mean())
 print("median: ", df['discount%'].median())
 print("std: ", df['discount%'].std())
-
-# %%
-#weekday
-print("valor mínimo: ", df['weekday'].min())
-print("valor máximo: ", df['weekday'].max())
-print("mean: ", df['weekday'].mean())
-print("median: ", df['weekday'].median())
-print("std: ", df['weekday'].std())
-
-# %%
-#hour
-print("valor mínimo: ", df['hour'].min())
-print("valor máximo: ", df['hour'].max())
-print("mean: ", df['hour'].mean())
-print("median: ", df['hour'].median())
-print("std: ", df['hour'].std())
 
 # %%
 #Food%
