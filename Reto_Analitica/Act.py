@@ -108,16 +108,38 @@ sns.set_style("white")
 sns.displot(data=df, x="customer")
 plt.show()
 
+#%%
+babies = df[lambda x: x['Baby%']>50]
+fresh= df[lambda x: x['Food%']>50]
+
+plt.hist([fresh['hour'], babies['hour']], bins=24)
+plt.xlabel("Hour")
+plt.ylabel("Orders")
+
 # %%
 df.corr()
 sns.heatmap(df.corr(), annot=True)
+
+# %%
+food = df[df['Food%']>50]
+food.corr() #Mapa de Calor
+sns.heatmap(food.corr(), annot=True)
+
+#%%
+df['discount%'] = df['discount%'].astype(float)
+toit = df[df['discount%']>0.0]
+toit.corr() #Mapa de Calor
+sns.heatmap(toit.corr(), annot=True)
 
 # %%
 sns.scatterplot(data=df, x="total_items", y="discount%")
 plt.show()
 
 # %%
-sns.displot(data=df, x="weekday", y="Food%")
+sns.scatterplot(data=toit,y="total_items", x="Baby%", hue="weekday")
+
+# %%
+sns.displot(data=toit,x="hour", hue="weekday")
 
 # %%
 T_items = df[df["total_items"] < 29] 
@@ -126,3 +148,5 @@ sns.boxplot(data=T_items,x="weekday",y="total_items")
 # %%
 Hour = df[df["hour"] > 0]
 sns.boxplot(data=Hour,x="weekday",y="hour")
+
+# %%
