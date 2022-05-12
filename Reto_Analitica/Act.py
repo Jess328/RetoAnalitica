@@ -150,3 +150,11 @@ plt.show()
 
 # %%
 sns.displot(data=df, x="weekday", y="Food%")
+
+# %%
+T_items = df[df["total_items"] < 29] 
+sns.boxplot(data=T_items,x="weekday",y="total_items")
+
+# %%
+Hour = df[df["hour"] > 0]
+sns.boxplot(data=Hour,x="weekday",y="hour")
